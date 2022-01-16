@@ -1,0 +1,64 @@
+using System;
+
+namespace MetotOverload
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //out
+
+            string sayi = "999";
+            int outNumber;
+
+            bool sum = int.TryParse(sayi, out outNumber);
+
+            if (sum)
+            {
+                Console.WriteLine("Success");
+                Console.WriteLine(outNumber);
+            }
+            else
+            {
+                Console.WriteLine("Fail");
+            }
+
+            Metots metots = new Metots();
+            metots.SumNums(2, 5, out int sumEqual);
+            Console.WriteLine(sumEqual);
+
+            //Metot Overload
+
+            int sayi2 = 999;
+            metots.WriteToScreen(Convert.ToString(sayi2));
+            metots.WriteToScreen(sayi2);
+            metots.WriteToScreen("aa","bb");
+
+            //Metot imzasına göre karar veriyor
+            // Metot Adı + Parametre sayısı + Parametre 
+
+        }
+        class Metots
+        {
+            public void SumNums(int a, int b, out int sum)
+            {
+                sum = a + b;
+            }
+
+            public void WriteToScreen(string veri)
+            {
+                Console.WriteLine(veri);
+            }
+
+            public void WriteToScreen(int veri)
+            {
+                Console.WriteLine(veri);
+            }
+
+            public void WriteToScreen(string veri, string veri2)
+            {
+                Console.WriteLine(veri + veri2);
+            }
+        }
+    }
+}
