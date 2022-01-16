@@ -49,7 +49,7 @@ namespace RecursiveAndExtensionMetots
             {
                 return sayi;
             }
-            return Expo(sayi, us - 1) + sayi;
+            return Expo(sayi, us - 1) * sayi;
         }
         //Expo(3,4)
         //Expo(3,3) * 3
