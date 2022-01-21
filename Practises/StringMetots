@@ -1,0 +1,69 @@
+using System;
+
+namespace StringMetots
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string degisken = "Welcome CSharp hoşgeldiniz";
+            string degisken2 = "CSharp";
+
+            //length
+
+            Console.WriteLine(degisken.Length);
+
+            //toupper,tolower
+
+            Console.WriteLine(degisken.ToUpper());
+            Console.WriteLine(degisken.ToLower());
+
+            //concat
+
+            Console.WriteLine(string.Concat(degisken, "Hello"));
+
+            //compare,compareto
+            Console.WriteLine(degisken.CompareTo(degisken2));
+
+            Console.WriteLine(string.Compare(degisken, degisken2, true));
+            Console.WriteLine(string.Compare(degisken, degisken2, false));
+
+            //Contains
+            Console.WriteLine(degisken.Contains(degisken2));
+            Console.WriteLine(degisken.EndsWith("CSharp"));
+            Console.WriteLine(degisken.StartsWith("Welcome"));
+
+            //indexof
+            Console.WriteLine(degisken.IndexOf("CS"));
+            Console.WriteLine(degisken.IndexOf("xx"));
+
+            //Insert
+            Console.WriteLine(degisken.Insert(0, "Merhaba"));
+
+            //LastIndexOf
+            Console.WriteLine(degisken.LastIndexOf("i"));
+
+            //Padleft, Padright
+            Console.WriteLine(degisken + degisken2.PadLeft(30));
+            Console.WriteLine(degisken + degisken2.PadLeft(30, '='));
+            Console.WriteLine(degisken.PadRight(50) + degisken2);
+            Console.WriteLine(degisken.PadRight(50, '+') + degisken2);
+
+            //Remove
+            Console.WriteLine(degisken.Remove(5));
+            Console.WriteLine(degisken.Remove(2, 3));
+            Console.WriteLine(degisken.Remove(0, 1));
+
+            //Replace
+            Console.WriteLine(degisken.Replace("CSharp", "C#"));
+            Console.WriteLine(degisken.Replace(" ", "+"));
+
+            //Split
+            Console.WriteLine(degisken.Split(' ')[1]);
+
+            //Substring
+            Console.WriteLine(degisken.Substring(4));
+            Console.WriteLine(degisken.Substring(4, 3));
+        }
+    }
+}
