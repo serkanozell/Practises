@@ -1,0 +1,25 @@
+using System;
+
+namespace AlgoritmaOdevleriSoru4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int charCounter = 0;
+            Console.WriteLine("Enter a sentence");
+            string sentence = Console.ReadLine();
+
+            string[] wordArray = sentence.Split(" ");
+            Console.WriteLine("Word number is " + wordArray.Length);
+            for (int i = 0; i < wordArray.Length; i++)
+            {
+                char[] charArray = wordArray[i].ToCharArray();
+                charCounter += charArray.Length;
+            }
+            Console.WriteLine("Character Num is : " + (charCounter));
+
+        }
+    }
+}
+
