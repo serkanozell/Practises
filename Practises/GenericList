@@ -1,0 +1,119 @@
+using System;
+using System.Collections.Generic;
+
+namespace GenericList
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //List<T> class
+            //System.Collections.Generic
+            //T-> object
+
+            List<int> sayiListesi = new List<int>();
+            sayiListesi.Add(94);
+            sayiListesi.Add(13);
+            sayiListesi.Add(78);
+            sayiListesi.Add(16);
+            sayiListesi.Add(8);
+            sayiListesi.Add(12);
+
+            List<string> renkListesi = new List<string>();
+            renkListesi.Add("Siyah");
+            renkListesi.Add("Sarı");
+            renkListesi.Add("Mavi");
+            renkListesi.Add("Kırmızı");
+            renkListesi.Add("Yeşil");
+
+            //Count
+            Console.WriteLine(renkListesi.Count);
+            Console.WriteLine(sayiListesi.Count);
+
+            //foreach
+            foreach (var sayi in sayiListesi)
+            {
+                Console.WriteLine(sayi);
+            }
+
+            foreach (var renk in renkListesi)
+            {
+                Console.WriteLine(renk);
+            }
+
+            //list.ForEach()
+            sayiListesi.ForEach(sayi => Console.WriteLine(sayi));
+            renkListesi.ForEach(renk => Console.WriteLine(renk));
+
+            //Listeden eleman çıkarma
+            sayiListesi.Remove(12);
+            renkListesi.Remove("Yeşil");
+
+            sayiListesi.ForEach(sayi => Console.WriteLine(sayi));
+            renkListesi.ForEach(renk => Console.WriteLine(renk));
+
+            //RemoveAt
+            sayiListesi.RemoveAt(1);
+            renkListesi.RemoveAt(1);
+            sayiListesi.ForEach(sayi => Console.WriteLine(sayi));
+            renkListesi.ForEach(renk => Console.WriteLine(renk));
+
+            //Liste içerisinde arama
+            if (sayiListesi.Contains(16))
+            {
+                Console.WriteLine("Liste içerisinde");
+            }
+
+            //Eleman ile indexe erişme
+            Console.WriteLine(renkListesi.BinarySearch("Kırmı"));
+
+            //Diziyi listeye çevirme
+            string[] animalArray = { "Cat", "Dog", "Horse", "Bird" };
+            List<string> animalList = new List<string>(animalArray);
+
+            //Listeyi temizlemek
+            animalList.Clear();
+
+            //Liste içinde nesne tutmak
+            List<User> userList = new List<User>();
+            User user1 = new User();
+            user1.Name1 = "AAA";
+            user1.SurName1 = "AAAA";
+            user1.Age1 = 40;
+
+            User user2 = new User();
+            user2.Name1 = "BBB";
+            user2.SurName1 = "BBB";
+            user2.Age1 = 25;
+
+            userList.Add(user1);
+            userList.Add(user2);
+
+            List<User> newList = new List<User>();
+            newList.Add(new User()
+            {
+                Name1 = "CCC",
+                SurName1 = "CCC",
+                Age1 = 39
+            });
+
+            foreach (User user in userList)
+            {
+                Console.WriteLine("Username : " + user.Name1);
+                Console.WriteLine("Surname : " + user.SurName1);
+                Console.WriteLine("Age : " + user.Age1);
+            }
+            newList.Clear();
+        }
+    }
+    public class User
+    {
+        string Name;
+        string SurName;
+        int Age;
+
+        public string Name1 { get => Name; set => Name = value; }//Encapsulation
+        public string SurName1 { get => SurName; set => SurName = value; }
+        public int Age1 { get => Age; set => Age = value; }
+    }
+}
