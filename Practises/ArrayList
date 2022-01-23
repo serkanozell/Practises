@@ -1,0 +1,53 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace ArrayLists
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ArrayList arrayList = new ArrayList();
+            //arrayList.Add("Serkan");
+            //arrayList.Add(7);
+            //arrayList.Add(true);
+            //arrayList.Add('C');
+
+            ////Verilere erişim index üzerinden olur
+            //Console.WriteLine(arrayList[1]);
+            //foreach (var item in arrayList)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("----------------------");
+
+            ////AddRange
+            //string[] renkler = { "Siyah", "Mavi", "Sarı" };
+            List<int> sayilar = new List<int> { 1, 5, 8, 9, 3, 4, 7 };
+            //arrayList.AddRange(renkler);
+            arrayList.AddRange(sayilar);
+
+            foreach (var item in arrayList)
+            {
+                Console.WriteLine(item);
+            }
+
+            //Sort
+            arrayList.Sort();
+
+            //Binary Search
+            Console.WriteLine(arrayList.BinarySearch(9));
+
+            //Reverse
+            arrayList.Reverse();
+            foreach (var item in arrayList)
+            {
+                Console.WriteLine(item);
+            }
+
+            //Clear
+            arrayList.Clear();
+        }
+    }
+}
