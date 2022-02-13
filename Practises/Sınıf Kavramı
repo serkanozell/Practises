@@ -1,0 +1,32 @@
+using System;
+
+namespace Classes
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Calisan calisan = new Calisan();
+            calisan.Adi = "aa";
+            calisan.SoyAdi = "bb";
+            calisan.No = 123;
+            calisan.Departman = "cc";
+            calisan.CalisanBilgileri();
+        }
+    }
+    class Calisan
+    {
+        public string Adi { get; set; }
+        public string SoyAdi { get; set; }
+        public int No { get; set; }
+        public string Departman { get; set; }
+
+        public void CalisanBilgileri()
+        {
+            Console.WriteLine("Çalışanın Adı : {0}", Adi);
+            Console.WriteLine("Çalışanın SoyAdı : {0}", SoyAdi);
+            Console.WriteLine("Çalışanın Numarası : {0}", No);
+            Console.WriteLine("Çalışanın Departmanı : {0}", Departman);
+        }
+    }
+}
