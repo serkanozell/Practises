@@ -1,0 +1,58 @@
+using System;
+
+namespace Constructors
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Calisan calisan = new Calisan();
+            calisan.Adi = "aa";
+            calisan.SoyAdi = "bb";
+            calisan.No = 123;
+            calisan.Departman = "cc";
+            calisan.CalisanBilgileri();
+
+            Calisan calisan1 = new Calisan("ctor1", "ctor", 1234, "ctor");
+            calisan1.CalisanBilgileri();
+
+            Calisan calisan2 = new Calisan("serkan", "ozel");
+            calisan2.CalisanBilgileri();
+        }
+    }
+    class Calisan
+    {
+        public string Adi { get; set; }
+        public string SoyAdi { get; set; }
+        public int No { get; set; }
+        public string Departman { get; set; }
+
+        public Calisan()
+        {
+
+        }
+
+        public Calisan(string ad, string soyad, int no, string departman)
+        {
+            Adi = ad;
+            SoyAdi = soyad;
+            No = no;
+            Departman = departman;
+        }
+
+        public Calisan(string ad, string soyad)
+        {
+            Adi = ad;
+            SoyAdi = soyad;
+        }
+
+        public void CalisanBilgileri()
+        {
+            Console.WriteLine("Çalışanın Adı : {0}", Adi);
+            Console.WriteLine("Çalışanın SoyAdı : {0}", SoyAdi);
+            Console.WriteLine("Çalışanın Numarası : {0}", No);
+            Console.WriteLine("Çalışanın Departmanı : {0}", Departman);
+            Console.WriteLine("------------------------------------------------");
+        }
+    }
+}
