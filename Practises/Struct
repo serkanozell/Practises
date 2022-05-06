@@ -1,0 +1,54 @@
+using System;
+
+namespace Struct
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dikdortgen dikdortgen = new Dikdortgen();
+            dikdortgen.KisaKenar = 10;
+            dikdortgen.UzunKenar = 20;
+            Console.WriteLine("Alan1 = {0}", dikdortgen.AlanHesapla());
+            Dikdortgen dikdortgen1 = new Dikdortgen();
+            Console.WriteLine("With ctor = " + dikdortgen1.AlanHesapla());
+
+            DikdortgenStruct dikdortgenStruct;
+            dikdortgenStruct.KisaKenar = 5;
+            dikdortgenStruct.UzunKenar = 4;
+            Console.WriteLine("Alan-Struct = {0}",dikdortgenStruct.AlanHesaplaStruct());
+        }
+    }
+
+    class Dikdortgen
+    {
+        public int KisaKenar;
+        public int UzunKenar;
+
+        public long AlanHesapla()
+        {
+            return KisaKenar * UzunKenar;
+        }
+        public Dikdortgen()
+        {
+            KisaKenar = 5;
+            UzunKenar = 5;
+        }
+    }
+
+    struct DikdortgenStruct
+    {
+        public int KisaKenar;
+        public int UzunKenar;
+
+        public DikdortgenStruct(int kisaKenar, int uzunKenar)
+        {
+            KisaKenar = kisaKenar;
+            UzunKenar = uzunKenar;
+        }
+        public long AlanHesaplaStruct()
+        {
+            return KisaKenar * UzunKenar;
+        }
+    }
+}
