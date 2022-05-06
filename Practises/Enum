@@ -1,0 +1,39 @@
+using System;
+
+namespace Enums
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Gunler.Pazartesi);
+            Console.WriteLine((int)Gunler.Cuma);
+
+            int derece = 43;
+            if (derece <= (int)Sicaklik.Normal)
+            {
+                Console.WriteLine("Evde kal");
+            }
+            else if (derece>=(int)Sicaklik.Sicak)
+            {
+                Console.WriteLine("hava sicak");
+            }
+        }
+    }
+
+    enum Gunler
+    {
+        Pazartesi = 1,
+        Sali,
+        Carsamba,
+        Persembe,
+        Cuma
+    }
+
+    enum Sicaklik
+    {
+        Soguk = 2,
+        Normal = 20,
+        Sicak = 30
+    }
+}
